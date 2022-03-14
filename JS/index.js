@@ -1,11 +1,15 @@
-// business logic
-function Contact(first, last) {
-    this.firstName = first;
-    this.lastName = last;
-}
-
-//   user interface logic
 $(document).ready(function () {
+    // business logic
+    function Contact(first, last) {
+        this.firstName = first;
+        this.lastName = last;
+    }
+    Contact.prototype.fullName = function () {
+        return this.firstName + " " + this.lastName;
+    }
+
+    //   user interface logic
+
     $("form#new-contact").submit(function (event) {
         event.preventDefault();
 
